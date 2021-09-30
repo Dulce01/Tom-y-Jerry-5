@@ -3,7 +3,7 @@
 var canvas,bg;
 var together;
 var tom, tomImg1,tomImg2;
-var jerry, jerryImg1,jerryImg2;
+var jerry, jerryImg1,jerryImg2; //Agrega una variable para tomImg3,jerryImg3
 
 function preload() {
     bg = loadImage("images/garden.png");
@@ -36,11 +36,14 @@ function draw() {
     if(tom.x - jerry.x < (tom.width - jerry.width)/2)
     { 
       //Cambia la animaciòn cuando los personajes se toquen
-     cat.velocityX = 0
-     cat.addAnimation("images/tomOne.png",tomImg1);
-     cat.changeAnimation("images/tomOne.png",tomImg1);
+     cat.velocityX = 0   // no tienes una variable cat por lo tamto es tom, asi que cambialos en todos los cat por tom 
+     cat.addAnimation("images/tomOne.png",tomImg1); // aqui vamos a cambiar lo que esta dentro de parentesis recuerda que lleva unaetiqueta y la imagen tom.addAnimation("tomLastImage",tomImg3);
+     cat.changeAnimation("images/tomOne.png",tomImg1); //aqui tambien se va a cambiar solo por la etiqueta  tom.changeAnimation("tomLastImage");
      cat.x = 300
      cat.scale = 0.2
+     //te hace falta agregar a jerry  
+     // jerry.addAnimation("jerryLastImage", jerryImg3);
+     // jerry.changeAnimation("jerryLastImage");
     }  
 
     drawSprites();
